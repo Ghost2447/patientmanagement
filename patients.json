@@ -1,0 +1,14 @@
+{
+    "2025-06-06": [
+        {
+            "name": "Sudarshan",
+            "age": "24",
+            "gender": "men",
+            "medicine": "dolo 500",
+            "quantity": 6,
+            "med_cost": 30.0,
+            "consult": 600.0,
+            "recommend": "good"
+        }
+    ]
+}

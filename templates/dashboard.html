@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Patient Entry - {{ date }}</h2>
+  <form method="POST">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="number" name="age" placeholder="Age" required><br>
+    <input type="text" name="gender" placeholder="Gender" required><br>
+    <input type="text" name="medicine" placeholder="Medicine" required><br>
+    <input type="number" name="quantity" placeholder="Quantity" required><br>
+    <input type="number" name="med_cost" placeholder="Cost per med" step="0.01" required><br>
+    <input type="number" name="consult" placeholder="Consult Fee" step="0.01" required><br>
+    <input type="text" name="recommend" placeholder="Recommendations"><br>
+    <button type="submit">Add Patient</button>
+  </form>
+
+  <hr>
+
+  <h3>Today's Patients</h3>
+  <ul>
+    {% for p in patients %}
+      <li>{{ p.name }} - ₹{{ p.consult + (p.quantity * p.med_cost) }}</li>
+    {% endfor %}
+  </ul>
+
+  <h4>Total Medicine Cost: ₹{{ med }}</h4>
+  <h4>Total Consultation: ₹{{ consult }}</h4>
+  <h3><b>Total Income Today: ₹{{ total }}</b></h3>
+
+  <a href="/logout">Logout</a>
+</body>
+</html>
